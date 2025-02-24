@@ -11,30 +11,30 @@ public abstract class Agente {
      */
     private Ambiente ambiente;
     /**
-     * Atributo controlo do tipo Controlo, deverá ser inicializada fora do construtor de forma a implementar a associação correta
+     * Atributo controlo do tipo Controlo, deverá ser inicializada fora do construtor de forma a implementar a associação de agregação
      */
     private  Controlo controlo;
 
     /**
-     * Método construtor da classe Agente
+     * Método construtor público da classe Agente
      * @param ambiente
      * @param controlo
      */
     public Agente(Ambiente ambiente, Controlo controlo){}
 
     /**
-     * Método executar do tipo Void
+     * Método público executar do tipo Void
      */
     public void executar(){}
 
     /**
-     * Método percepcionar
+     * Método protegido percepcionar
      * @return Percepcao
      */
     protected Percepcao percepcionar(){}
 
     /**
-     * Método actuar do tipo void
+     * Método protegido actuar do tipo void
      * @param accao
      */
     protected void actuar(Accao accao){}

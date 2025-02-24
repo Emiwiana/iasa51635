@@ -12,14 +12,14 @@ public class Accao {
     private Comando comando;
 
     /**
-     * //Construtor da classe Accao
+     * //Construtor público da classe Accao
      * @param comando
      */
-    Accao(Comando comando){}
+    public Accao(Comando comando){}
 
 
     /**
-     * Método getter de modo a realizar a propriedade read-only do atributo comando, de modo a que este não possa ser alterado por outra Classe mas possa ser acedido
+     * Método público getter de modo a realizar a propriedade read-only do atributo comando, de modo a que este não possa ser alterado por outra Classe mas possa ser acedido
      * @return Atributo  read-only comando
      */
     public Comando getComando(){}

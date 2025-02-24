@@ -3,7 +3,7 @@ import ambiente.Evento;
 import ambiente.Comando;
 
 /**
- * Interface pública Ambiente
+ * Interface pública Ambiente, dependente nas interfaces Comando e Evento
  */
 public interface Ambiente {
     /**
