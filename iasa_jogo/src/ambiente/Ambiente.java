@@ -15,7 +15,9 @@ public interface Ambiente {
      * Método público observar
      * @return Evento
      */
-    default Evento observar(){}
+    default Evento observar(){
+        return null;
+    }
 
     /**
      * Método público executar

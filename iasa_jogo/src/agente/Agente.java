@@ -13,7 +13,7 @@ public abstract class Agente {
     /**
      * Atributo controlo do tipo Controlo, deverá ser inicializada fora do construtor de forma a implementar a associação de agregação
      */
-    private  Controlo controlo;
+    private Controlo controlo;
 
     /**
      * Método construtor público da classe Agente
