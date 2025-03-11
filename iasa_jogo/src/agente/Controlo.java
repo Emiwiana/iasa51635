@@ -11,5 +11,5 @@ public interface Controlo {
          * @param percepcao
          * @return Accao
          */
-        default Accao processar(Percepcao percepcao){}
+        default Accao processar(Percepcao percepcao){return null;}
 }

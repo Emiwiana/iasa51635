@@ -15,11 +15,15 @@ public class Accao {
      * Construtor público da classe Acçao
      * @param comando
      */
-    public Accao(Comando comando){}
+    public Accao(Comando comando){
+        this.comando = comando;
+    }
 
     /**
      * Método público getter de modo a realizar a propriedade read-only do atributo comando, de modo a que este não possa ser alterado por outra Classe mas possa ser acedido
      * @return Atributo  read-only comando
      */
-    public Comando getComando(){}
+    public Comando getComando(){
+        return this.comando;
+    }
 }

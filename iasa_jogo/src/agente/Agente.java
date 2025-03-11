@@ -20,22 +20,45 @@ public abstract class Agente {
      * @param ambiente
      * @param controlo
      */
-    public Agente(Ambiente ambiente, Controlo controlo){}
+    public Agente(Ambiente ambiente, Controlo controlo){
+        this.ambiente = ambiente;
+        this.controlo = controlo;
+    }
 
     /**
      * Método público executar do tipo Void
      */
-    public void executar(){}
+    public void executar(){
+        Percepcao percepcao = this.percepcionar();
+        Accao accao = controlo.processar(percepcao);
+        actuar(accao);
+
+        //maneira alternativa de implementar
+        //actuar(controlo.processar(percepcionar()));
+    }
 
     /**
      * Método protegido percepcionar
+     *
+     *
+     *
      * @return Percepcao
      */
-    protected Percepcao percepcionar(){}
+    protected Percepcao percepcionar(){
+        ambiente.Evento evento = ambiente.observar();
+        return new Percepcao(evento);
+    }
 
     /**
      * Método protegido actuar do tipo void
+     *
+     * Se a accão não for nula, executa o comando da acção
+     *
      * @param accao
      */
-    protected void actuar(Accao accao){}
+    protected void actuar(Accao accao){
+        if(accao != null){
+            ambiente.executar(accao.getComando());
+        }
+    }
 }

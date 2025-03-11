@@ -14,11 +14,15 @@ public class Percepcao {
      * Construtor público da classe percepção
      * @param evento
      */
-    public Percepcao(Evento evento){}
+    public Percepcao(Evento evento){
+        this.evento= evento;
+    }
 
     /**
      * Método público getter de modo a realizar a propriedade read-only do atributo evento, de modo a que este não possa ser alterado por outra Classe mas possa ser acedido
      * @return atributo read-only evento
      */
-    public Evento getEvento(){}
+    public Evento getEvento(){
+        return this.evento;
+    }
 }
