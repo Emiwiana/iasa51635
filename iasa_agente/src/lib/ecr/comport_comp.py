@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 from .comportamento import Comportamento
 
-class ComportComp(ABC, Comportamento):
+class ComportComp(Comportamento):
     """
     Implementação do mecanismo base de um comportamento composto
     <p>
@@ -15,6 +15,7 @@ class ComportComp(ABC, Comportamento):
         Args:
             comportamentos (List): lista de comportamentos que compõem este comportamento composto
         """
+        super().__init__()
         self.__comportamentos = comportamentos
         
         
@@ -29,7 +30,7 @@ class ComportComp(ABC, Comportamento):
         Returns:
             List: lista com as acções dos comportamentos
         """
-        super().activar(self, percepcao)
+        super().activar(percepcao)
         accoes = []
         for comportamento in self.__comportamentos:
             accao = comportamento.activar(percepcao)
@@ -41,11 +42,10 @@ class ComportComp(ABC, Comportamento):
     @abstractmethod
     def seleccionar_accao(self, accoes):
         """
-        Seleciona uma acção para ativar tendo em conta a sua hierarquia e atravéz de prioridade dinâmica
+        Seleciona uma acção para ativar tendo em conta a sua hierarquia ou atravéz de prioridade dinâmica
         Args:
             accoes (List): Lista composta por ações
         Returns:
             Accao: acção selecionada
         """
-        raise NotImplementedError
     

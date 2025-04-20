@@ -11,16 +11,18 @@ class Resposta:
             accao (Accao): _description_
         """
         self._accao = accao
-        raise NotImplementedError
         
     #intensidade é 0.0 (em vez de apeans 0) de modo a especificar que a varável está a ser inicializada como float
     def activar(self, percepcao, itensidade = 0.0):
         """
-        activa uma percepcao
+        verifica se existe uma percepção, se sim, atualiza a prioridade da acção em funcão á 
+        intensidade definida e retorna a acção
         Args:
             percepcao (Percepccao): percepcao a ser activada
             itensidade (float, optional): _description_ Defaults to 0.
         Returns:
-            accao Accao: accao retornada pela ativação da percepção
+            accao Accao: accao com a prioridade atualizada
         """
-        raise NotImplementedError
+        if percepcao is not None:
+            self._accao.prioridade = itensidade
+            return self._accao
