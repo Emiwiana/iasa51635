@@ -28,4 +28,4 @@ class Estado(ABC):
     #se estivermos a comparar duas instâncias da classe estado, comparamos o valor da função __hash__ de ambos
     def __eq__(self, other):
         if isinstance(other, Estado):
-            return self.__hash__ == other.__hash__()
+            return hash(self) == hash(other)

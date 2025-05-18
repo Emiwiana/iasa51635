@@ -7,7 +7,7 @@ class Problema(ABC):
         self.__operadores = operadores
     
     @abstractmethod
-    def objetivo(estado):
+    def objetivo(self, estado):
         """
         Método que representa o objetivo do problema dado um estado
         Args:

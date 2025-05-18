@@ -6,10 +6,10 @@ class ProcuraProfIter(ProcuraProfLim):
     repetetivamente, aumentando o limite de profundidade, até ser encontrada uma solução.
     Assim, é possível encontrar a solução com menor profundidade
     """
-    def __init__(self, prof_max=10):
+    def __init__(self, prof_max=5):
         super().__init__(prof_max)
         
-    def procurar(self, problema, inc_prof = 1, limite_prof = 100):
+    def procurar(self, problema, inc_prof = 1, limite_prof = 5):
     
         for profundidade in range(0, limite_prof+1, inc_prof):
             self._prof_max = profundidade           #atualiza a profundidade, aprofundando-a

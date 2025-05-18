@@ -28,6 +28,14 @@ class MecanismoProcura(ABC):
             no (No): Nó a ser memorizado
         """
         self._fronteira.inserir(no)
+        
+    @property
+    def nos_processados(self):
+        return No.nos_criados
+    
+    @property
+    def nos_em_memoria(self):
+        return No.nos_memoria_maximo
     
     def procurar(self, problema):
         self._iniciar_memoria()                                 #inicia a memória do mecanismo de fronteira
@@ -35,7 +43,7 @@ class MecanismoProcura(ABC):
         self._memorizar(no)                                     #memoriza o nó inicial
         while not self._fronteira.vazia:                        #enquanto a fronteira não for vazia,
             no = self._fronteira.remover()                      #remove o primeiro nó da fronteira.
-            if problema.objetivo(no.estado):                   #verifica se o estado do nó é objetivo,
+            if problema.objetivo(no.estado):                    #verifica se o estado do nó é objetivo,
                 return Solucao(no)                              #retorna a solução que termina no nó.
             for no_sucessor in self._expandir(problema, no):    #expande o nó e insere cada nó sucessor na fronteira.
                 self._memorizar(no_sucessor)
